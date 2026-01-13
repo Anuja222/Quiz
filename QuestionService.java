@@ -26,9 +26,20 @@ public class QuestionService {
             answers[i] = answer.nextLine();
             i++;
         }
-
-        for(String x : answers){
-            System.out.println(x);
-        }     
     }
+
+            public void printScore(){
+            
+            int score = 0;
+            for(int j=0; j<question.length; j++){
+                Questions que = question[j];
+                String actualAnswer = que.getAnswer();
+                String userAnswer = answers[j];
+
+                if(actualAnswer.equals(userAnswer)){
+                    score++;
+                }
+            }
+            System.out.println("Your score is: " + score);
+        }
 }
